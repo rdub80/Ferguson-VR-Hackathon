@@ -25,6 +25,14 @@ New conciderations for VR app development
 
 ---
 
+### Degrees of Freedom, Stereoscopic vision & Interpupillary distance[^*]
+
+![inline,fit](images/positionOrientationVR.png)
+
+![inline,fit](images/FOVrelatedProperties.png) ![inline,fit](images/createStereoscopicImages.png)
+
+[^*]: Illustrations from Mozilla
+
 ---
 
 # Native VR Devices (PC & Console)
@@ -64,20 +72,29 @@ Hundreds of third-party headsets
 - [SteamVR](https://steamcommunity.com/steamvr)
 - [Google Play](https://play.google.com/store/search?q=vr&c=apps&hl=en)
 - [Oculus Store](https://www.oculus.com/experiences/rift/)
-- [iTunes]() 
 - [The Rift Arcade](http://www.theriftarcade.com/)
 - [V](http://www.hellov.io/) "open alternative" to SteamVR
 
 ---
 
-# Create responsibly
+# Why WebVR?
 
-![autoplay](https://www.youtube.com/watch?v=E42mNt_vsz8)
+* no app store ecosystem, distribution via internet
+* mobile & desktop automatically supported
+* uses current tools and libraries for JS
+* easy switch between VR & non-VR mode
+* interfacing with hardware through the browser
+
+---
+
+### Progressive Enhancement by Arturo Paracuellos 
+
+![autoplay](https://www.youtube.com/watch?v=jMcLQoMR78w)
 
 ---
 
 # Virtual Reality on the Web 
-## A retrospective
+## A retrospective 1/2
 
 * 1994 VRML - first attempt to create an internet based 3D language. (Mark Pesce presented the Labyrinth demo he developed with Tony Parisi and Peter Kennard.)
 * VRML2 (1997) added many features (animation) and later was succeeded by X3D
@@ -86,7 +103,7 @@ Problem of VRML: plugin-based technology that only came preinstalled on IE
 ---
 
 # Virtual Reality on the Web 
-## A retrospective
+## A retrospective 2/2
 
 * 2003 OpenGL ES - cross-language and multi-platform 3D graphics API. 
 Hardware accelerated rendering of 3D objects.
@@ -95,19 +112,24 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
-# Virtual Reality on the Web 
-## Big WebGL Frameworks today
+# Most popular WebGL Engines today
 
 * [Three.js](https://threejs.org/) by [Ricardo Cabello](http://mrdoob.com/) in 2010
-* [Scene.js](http://scenejs.org/)
 * [Babylon.js](https://www.babylonjs.com/)
-* [Turbulenz](http://biz.turbulenz.com/developers)
-* [Goo Engine](http://code.gooengine.com/latest/docs/)
 * [PlayCanvas.js](https://playcanvas.com/)
+* [Goo Engine](http://code.gooengine.com/latest/docs/)
+* [Scene.js](http://scenejs.org/)
+* [Turbulenz](http://biz.turbulenz.com/developers)
+
+![right,fit,filtered](images/webglengines.png)
 
 ---
 
-[WebGL Frameworks Comparison](http://bnjm.github.io/WebGL-framework-comparison/)
+![inline,fit](images/stackchart.png)
+
+**Stackoverflow Score growth over time by tag comparison**
+
+[WebGL Framework Comparison](http://bnjm.github.io/WebGL-framework-comparison/)
 
 ---
 
@@ -130,9 +152,7 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
-# What is WebVR?
-
-**Goals**:
+# Goals of WebVR
 
 - Detect available Virtual Reality devices. 
 - Query the devices capabilities. 
@@ -141,9 +161,7 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
-# What is WebVR?
-
-**Non-goals**:
+# Non-goals of WebVR
 
 - Define how a Virtual Reality browser would work. 
 - Take full advantage of Augmented Reality devices. 
@@ -154,6 +172,7 @@ Hardware accelerated rendering of 3D objects.
 ---
 
 # WebVR Frameworks
+
 * [A-Frame](https://aframe.io/) by Mozilla
 * [ReactVR](https://facebook.github.io/react-vr/) by Facebook
 * [ForgeJS](https://forgejs.org/) by GoPro, Inc., great for 360 photo & video content
@@ -183,16 +202,164 @@ Hardware accelerated rendering of 3D objects.
 
 ![inline](images/aframe_stack.png)
 
+---
+
+# A-Frame
+## Entity-Component System
+
+![inline,fit](images/aframe_ecs.png)
 
 ---
 
-vrchive.com
+# A-Frame
 
-### Simply *drop an image onto the Deckset window* and the Markdown you need to display the image is automatically created and *copied to the clipboard.*
+- Entities are HTML elements (i.e., `<a-entity> `)
+- Components are HTML attributes, set on the entity
+
+```html 
+<body>
+	<a-scene>
+		<a-entity geometry="primitive:box" material="color:#c00">
+		</a-entity>
+	</a-scene>
+</body>
+```
+---
+
+# Entity
+
+* general purpose objects (e.g. create a player, ball, or field)
+* inherently have position, rotation and scale in scene
+
+```html 
+	<a-entity 
+		geometry="primitive:box; 
+				  width:0.2; 
+				  height:0.3;
+				  depth:0.5;" 
+		material="color:#c00" 
+		position="0 0 -1" 
+		rotation="0 30 30" 
+		material="color:#c00">
+	</a-entity>
+
+```
 
 ---
 
-* This works with both local files and web images
-* You don’t _have_ to drag the file, you can also type the Markdown yourself if you know how
+# Primitives (concise, semantic building blocks)
 
-![left,filtered](http://deckset-assets.s3-website-us-east-1.amazonaws.com/colnago1.jpg)
+```html 
+	<a-entity geometry="primitive:box; 
+						width:0.2; 
+						height:0.3; 
+						depth:0.5;" 
+			  material="color:#c00">
+	</a-entity>
+```
+
+
+```html 
+	<a-box width="0.2" 
+		   height="0.3" 
+		   depth="0.5" 
+		   material="color:#c00">
+	</a-box>
+```
+
+---
+
+# Mixins
+
+```html 
+	<a-mixin id="box" 
+			 geometry="primitive:box; 
+					   width:0.2; 
+					   height:0.3; 
+					   depth:0.5;" 
+			 material="color:#c00">					 
+	</a-mixin>
+
+	<a-entity mixin="box">
+	</a-entity>
+```
+
+---
+
+# Custom Components
+
+```javascript 
+	AFRAME.registerComponent('foo', {
+		schema: {
+			bar: {type: 'number'},
+			baz: {type: 'string'}
+		},
+		init: function () {
+			// Do something when component is plugged in.
+		},
+		update: function () {
+			// Do something when component's data is updated.
+		}
+	});
+```
+
+---
+
+# Gaze-Based Cursor Interactions
+
+```javascript 
+  	AFRAME.registerComponent('clickable', {
+    	init: function () {
+          	var el = this.el;
+          	el.addEventListener('mouseenter', function () {
+            	el.setAttribute('color', '#f00');
+          	});
+          	el.addEventListener('mouseleave', function () {
+            	el.setAttribute('color', '#fff');
+          	});
+          	el.addEventListener('click', function () {
+            	el.setAttribute('material', 'src' , 'assets/football.png');
+          	});
+        } 
+  	});
+```
+
+```html 
+	<a-sphere clickable src="assets/basketball.png" radius="0.5" color="#fff"></a-sphere>
+	<a-camera><a-cursor></a-cursor></a-camera>
+```
+
+---
+
+# A-Frame Component Registry
+
+![inline,fit](images/registry.png)
+
+---
+
+# https://aframe.io/docs/0.5.0/
+
+![filtered,fill](images/documentation.png)
+
+---
+
+## A-Frame Inspector <br/> `[control]+[option]+[i]`
+
+![filtered,fill](images/inspector.png)
+
+---
+
+# Create responsibly!
+
+![autoplay](https://www.youtube.com/watch?v=E42mNt_vsz8)
+
+---
+
+**Resources**
+
+... links to come ...
+
+**Thank You**
+
+@rolanddubois
+rolanddubois.com
