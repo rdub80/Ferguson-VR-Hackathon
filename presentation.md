@@ -183,6 +183,10 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
+# Demo [A](http://localhost:8888/01_ThreeJS_photosphere.html) [B](http://localhost:8888/02_A-Frame_photosphere.html)
+
+---
+
 # Three.js and WebVR
 ![left,fill](images/threejs.png)
 
@@ -305,6 +309,12 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
+# Gaze-Based Control
+
+![inline,fit](images/interactivepatterns_displayreticle.png)
+
+---
+
 # Gaze-Based Cursor Interactions
 
 ```javascript 
@@ -356,10 +366,28 @@ Hardware accelerated rendering of 3D objects.
 ---
 
 **Resources**
+* [A-Frame Slack](https://aframevr-slack.herokuapp.com/)
+* [A-Frame Component Registry](https://aframe.io/aframe-registry/)
+* [mozvr.com](https://mozvr.com/)
+* [VR Gets Real with WebVR](https://medium.com/@rolanddubois/vr-gets-real-174fdafcad4f)
+* [WebVR API](https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API)
+* [The UX of VR](http://www.uxofvr.com/)
 
-... links to come ...
-
-**Thank You**
-
+**Get In Touch**
 @rolanddubois
 rolanddubois.com
+
+*Code Time!*
+
+--- 
+
+# What we will be building
+
+* [github.com/rdub80/Ferguson-VR-Hackathon](https://github.com/rdub80/Ferguson-VR-Hackathon)
+* [XAMPP](https://www.apachefriends.org/index.html), [MAMP](https://www.mamp.info/en/) or ``` $ python -m SimpleHTTPServer ``` 
+* [**JSBin**](https://jsbin.com)
+
+![inline,fit](images/scene1.png)![inline,fit](images/scene2.png)![inline,fit](images/scene3.png)
+
+
+
