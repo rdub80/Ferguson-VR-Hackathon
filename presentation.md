@@ -1,5 +1,4 @@
 # Introduction to WebVR
-## Javascript into the Open Metaverse
 
 ---
 
@@ -12,20 +11,20 @@
 ---
 
 # VR Experiences
-New conciderations for VR app development
+New considerations for VR app development
 **Focus on User Experience**
-- Stereoscopic vision & Interpupillary distance (IPD)
-- Head tracking & Degrees of Freedom (DoF)
-- Cone of focus & Field of view (FOV)
-- 3D Positional Audio
-- Latency & Framerate (Frames per second / FPS)
+- Stereoscopic vision & interpupillary distance (IPD)
+- Head tracking & degrees of freedom (DoF)
+- Cone of focus & field of view (FOV)
+- 3D positional audio
+- Latency & frame rate (frames per second / FPS)
 **Focus on User Comfort**
 - Eye strain
 - Motion sickness
 
 ---
 
-### Degrees of Freedom, Stereoscopic vision & Interpupillary distance[^*]
+### Degrees of Freedom, Stereoscopic Vision & Interpupillary Distance[^*]
 
 ![inline,fit](images/positionOrientationVR.png)
 
@@ -79,11 +78,11 @@ Hundreds of third-party headsets
 
 # Why WebVR?
 
-* no app store ecosystem, distribution via internet
-* mobile & desktop automatically supported
-* uses current tools and libraries for JS
-* easy switch between VR & non-VR mode
-* interfacing with hardware through the browser
+* No app store ecosystem, distribution via internet
+* Mobile & desktop automatically supported
+* Uses current tools and libraries for JS
+* Easy switch between VR & non-VR mode
+* Interfacing with hardware through the browser
 
 ---
 
@@ -94,16 +93,16 @@ Hundreds of third-party headsets
 ---
 
 # Virtual Reality on the Web 
-## A retrospective 1/2
+## A Retrospective 1/2
 
-* 1994 VRML - first attempt to create an internet based 3D language. (Mark Pesce presented the Labyrinth demo he developed with Tony Parisi and Peter Kennard.)
-* VRML2 (1997) added many features (animation) and later was succeeded by X3D
+* 1994 VRML - first attempt to create an internet-based 3D language. (Mark Pesce presented the Labyrinth demo he developed with Tony Parisi and Peter Kennard.)
+* VRML2 (1997) - added many features (animation) and later was succeeded by X3D
 Problem of VRML: plugin-based technology that only came preinstalled on IE
 
 ---
 
 # Virtual Reality on the Web 
-## A retrospective 2/2
+## A Retrospective 2/2
 
 * 2003 OpenGL ES - cross-language and multi-platform 3D graphics API. 
 Hardware accelerated rendering of 3D objects.
@@ -127,7 +126,7 @@ Hardware accelerated rendering of 3D objects.
 
 ![inline,fit](images/stackchart.png)
 
-**Stackoverflow Score growth over time by tag comparison**
+**Stackoverflow score growth over time by tag comparison**
 
 [WebGL Framework Comparison](http://bnjm.github.io/WebGL-framework-comparison/)
 
@@ -154,8 +153,8 @@ Hardware accelerated rendering of 3D objects.
 
 # Goals of WebVR
 
-- Detect available Virtual Reality devices. 
-- Query the devices capabilities. 
+- Detect available virtual reality devices. 
+- Query the device’s capabilities. 
 - Poll the device’s position and orientation. 
 - Display imagery on the device at the appropriate frame rate.
 
@@ -163,11 +162,11 @@ Hardware accelerated rendering of 3D objects.
 
 # Non-goals of WebVR
 
-- Define how a Virtual Reality browser would work. 
-- Take full advantage of Augmented Reality devices. 
+- Define how a virtual reality browser would work. 
+- Take full advantage of augmented reality devices. 
 - Build “The Metaverse.”
 
-*check out [https://webvr.rocks/](https://webvr.rocks/) for support updates*
+*Check out [https://webvr.rocks/](https://webvr.rocks/) for support updates*
 
 ---
 
@@ -177,7 +176,7 @@ Hardware accelerated rendering of 3D objects.
 * [ReactVR](https://facebook.github.io/react-vr/) by Facebook
 * [ForgeJS](https://forgejs.org/) by GoPro, Inc., great for 360 photo & video content
 * [Primrose](https://primrosevr.com/) great for collaborative VR web apps
-* [Janus VR](http://janusvr.com/) VR Browser/Editor
+* [Janus VR](http://janusvr.com/) VR browser/editor
 * [Vizor](https://patches.vizor.io/) in-browser VR development, SocialVR
 * [GLAM](https://tparisi.github.io/glam/) (GL And Markup) declarative language for 3D web content
 
@@ -190,7 +189,7 @@ Hardware accelerated rendering of 3D objects.
 # Three.js and WebVR
 ![left,fill](images/threejs.png)
 
-### compared with
+### comparison with
 
 # A-Frame
 ![right,inline](images/aframe.png)
@@ -199,10 +198,10 @@ Hardware accelerated rendering of 3D objects.
 
 # A-Frame
 
-* is a 3DML (3D markup language) like as X3Dom and GLAM
+* a 3DML (3D markup language) like X3Dom and GLAM
 * DOM-based Entity-Component System => declarative & extensible (similar to Unity/UE4/PlayCanvas)
 
-**A-Frame Stack**:
+**The A-Frame Stack**:
 
 ![inline](images/aframe_stack.png)
 
@@ -233,7 +232,7 @@ Hardware accelerated rendering of 3D objects.
 # Entity
 
 * general purpose objects (e.g. create a player, ball, or field)
-* inherently have position, rotation and scale in scene
+* they inherently have a position, rotation and scale in a scene
 
 ```html 
 	<a-entity 
@@ -377,11 +376,9 @@ Hardware accelerated rendering of 3D objects.
 @rolanddubois
 rolanddubois.com
 
-*Code Time!*
-
 --- 
 
-# What we will be building
+# *It’s code time!* Here’s what we’re building:
 
 * [github.com/rdub80/Ferguson-VR-Hackathon](https://github.com/rdub80/Ferguson-VR-Hackathon)
 * [XAMPP](https://www.apachefriends.org/index.html), [MAMP](https://www.mamp.info/en/) or ``` $ python -m SimpleHTTPServer ``` 
