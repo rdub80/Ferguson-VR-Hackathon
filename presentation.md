@@ -182,7 +182,7 @@ Hardware accelerated rendering of 3D objects.
 
 ---
 
-# Demo [A](http://localhost:8888/01_ThreeJS_photosphere.html) [B](http://localhost:8888/02_A-Frame_photosphere.html)
+# Demo Comparison [A](http://dev.rolanddubois.com/Ferguson-VR-Hackathon/01_ThreeJS_photosphere.html) & [B](http://dev.rolanddubois.com/Ferguson-VR-Hackathon/02_A-Frame_photosphere.html)
 
 ---
 
